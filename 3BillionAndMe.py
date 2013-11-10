@@ -19,7 +19,7 @@ app.secret_key = 'HappyHalloween'
 def initialize():
 	#calls initial html
 	if 'username' in session:
-		return render_template('3BAMLoggedIn.html', genomeInfo = None, loggedInAs=session['username'])
+		return render_template('3BAMUserHome.html', genomeInfo = None, loggedInAs=session['username'])
 	return render_template('3BAMMainPage.html')
 
 @app.route('/login', methods=['GET', 'POST'])
