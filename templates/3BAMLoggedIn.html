@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+	<title>3 Billion and Me</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="row">
+		<div class="col-11 col-sm-11 col-lg-11">
+			<h1 style="text-align:center">Three Billion and Me</h1>
+		</div>
+		<div class="col-1 col-sm-1 col-lg-1">
+			<p></p>
+			<button type="button" class="btn btn-default btn-xs" onclick="location.href='{{url_for('logout')}}'">Log Out</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 col-sm-12 col-lg-12">
+			<p style="text-align:center">Three Billion and Me is a new web application for people who have had their whole genomes scanned
+			to find out what can be known from that information.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 col-sm-12 col-lg-12">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Your Information</a>
+				</div>
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						<p class="navbar-text">Signed in as: {{loggedInAs}}</p>
+						<li class="active"><a href="{{url_for('home')}}">Home</a></li>
+						<li><a href="{{url_for('healthVariants')}}">Health Variants</a></li>
+						<li><a href="{{url_for('otherRareVariants')}}">Other Rare Variants</a></li>
+						<li><a href="{{url_for('ethnicInfo')}}">Ethnic Info</a></li>
+						<li><a href="{{url_for('about')}}">About</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-1 col-sm-1 col-lg-1">
+		</div>
+		<div class="col-11 col-sm-11 col-lg-11">
+			{% if genomeInfo == None: %}
+				<form action="{{ url_for('uploadGenome') }}" enctype="multipart/form-data" method="POST" class=uploadGenome>
+					<div class="form-Group">
+					<dd><label for="file">If you want to learn more about your genome, upload your file here:</label>
+					<dd><input type="file" id="file" name="userGenome">
+					<dd><input type="submit" class="btn btn-default btn-xs" value="Submit">		
+					</div>
+				</form>
+			{% else: %}
+				<p>{{genomeInfo}}</p>
+			{% endif %}
+		</div>
+	</div>
+</body>
+</html>

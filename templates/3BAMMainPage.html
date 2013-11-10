@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+	<title>3 Billion and Me</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="row">
+		<div class="col-11 col-sm-11 col-lg-11">
+			<h1 style="text-align:center">Three Billion and Me</h1>
+		</div>
+		<div class="col-1 col-sm-1 col-lg-1">
+			<form role="form" action="{{url_for('login')}}" method="POST">
+				<h5>Log in:</h5>
+				<input style="height: 1.5em" type="username" class="form-control" id="username" name="username" placeholder="Username">
+				<input type="submit" value="Submit" class="btn btn-default btn-xs">
+				<!--<input style="height: 1.5em" type="password" class="form-control" id="password" placeholder="Password">
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input style="height: 1.5em" type="username" class="form-control" id="username" placeholder="Enter username">
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input style="height: 1.5em" type="password" class="form-control" id="password" placeholder="Enter password">
+				</div>-->
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 col-sm-12 col-lg-12">
+			<p style="text-align:center">Three Billion and Me is a new web application for people who have had their whole genomes scanned
+			to find out what can be known from that information.</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="jumbotron">
+			<h2>Welcome to 3 Billion and Me!</h2>
+			<p>Have you ever found yourself stuck with a whole genome scan and no one to interpret it?<br>
+				Do the scientists give unintelligible answers, and the people at 23 and Me just don't know enough about genetics?</p>
+			<p>Well, look no further, 3 Billion and Me will take you up on that challenge!<br>
+				Our brand new website combines the most up to date genetic analysis tools, like 
+				<a href="http://pngu.mgh.harvard.edu/~purcell/plink/" target="_blank">PLINK</a> and 
+				<a href="http://atgu.mgh.harvard.edu/xbrowse/" target="_blank">XBrowse</a> 
+				with an easy to use and understandable interface to give you the best genome-sequence-interpretation experience possible.</p>
+	</div>
+	
+</body>
+</html>
